@@ -1,0 +1,73 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+###Programa Iberoamericano de Formación en Minería de Datos
+
+####Tarea Número 3 Deiby Solano Cambronero
+####Curso: R avanzado Código: MD400
+####Profesor: Ing. Diego Jiménez A, Ing. Carlos Aguero B
+####Edición 1: I
+####Fecha de Entrega: 11 de julio del 2019 6:00pm (GMT-6)
+
+
+
+**Lineamientos Generales**
+Cada día de atraso en la entrega implica un rebajo de 10 puntos.La tarea es estrictamente de carácter individual, en caso de detectarse tareas idénticas ambas tendrán como nota cero. La tarea debe ser entregada en un documento html creado con el paquete Rmarkdown que contenga el código utilizado.El archivo debe tener el siguiente formato: Tarea1 nombre apellido.html, por ejemplo, si el nombre del estudiante es Luis Pérez el nombre del documento para la tarea 1 sería Tarea1 luis perez.html.
+Cada tarea representa un 20% de la nota total del curso.
+
+
+**Ejercicios** <br>
+**1. [50 puntos] Utilizando los paquetes devtools, usethis, packrat y el dataset Datos Churn.csv cree un proyecto de RStudio y realice los siguientes ejercicios:** <br>
+**a) [5 puntos] Cree la estructura de carpetas para su proyecto y documente cuál es el objetivo de cada una de las carpetas.**<br>
+```{r, eval=FALSE}
+library(usethis)
+create_project("Proyecto_Tarea_Deiby") 
+
+library(usethis)
+use_directory("R")
+use_directory("R/preparation")
+use_directory("R/processing")
+use_directory("R/modeling")
+use_directory("test")
+use_directory("data/raw")
+use_directory("data/processed")
+use_directory("reports/img")
+use_directory("reports/css")
+
+library(packrat)
+
+init()
+```
+
+####R
+Almacena código fuente R (aunque puede almacenar código de otros lenguajes de programación como Python, Stan, C++). A lo largo del proceso de análisis debemos aplicar ciertos cálculos y transformaciones que almacenaremos para luego utilizarlo una o varias veces en el proceso de análisis.<br>
+**Preparation** <- Lectura de los datos ya estén estos almacenados en CSV, base de datos relacional, NoSQL, Hadoop, etc. Tenemos que recuperar datos de múltiples fuentes todo el tiempo, así que es mejor tener una función o más funciones dedicada para la recuperación de datos.<br>
+**Processing** <- El formato original de los datos la gran mayoría de las veces no se ajusta a lo que el modelo necesita, por lo que se realizan transformaciones sobre las tablas originales ya sea para cambiar su formato o para crear nuevas variables, todo esto debe documentarse muy bien con el fin de que sea un proceso replicable en futuros casos de análisis.<br>
+**Modeling** <- Construcción de modelos ya sean estos de clasificación, regresión, clusterig, etc. No sólo debemos incluir la creación del modelo, sino también la evaluación del mismo, así como la lógica que nos permite trabajar con múltiples modelos en caso de se necesario.<br><br>
+
+
+####Test
+En este carpeta construiremos una serie de validaciones que nos permitirán verificar que las funciones de nuestro código retornen lo esperado y así poder detectar si que funciones se vieron afectadas con un cambio de nuestro código.<br><br>
+
+####Data
+**Raw** <- En esta carpeta almacenaremos una copia local de la lectura de datos generada en “preparation”, esto con el fin de poder trabajar sin conexión a red o en una red que tenga restringido el acceso al origen de los datos, el que nuestra fuente de datos sea estática que nos permite verificar los resultados de nuestro proceso de análisis en etapas de análisis y entrenamiento.<br>
+**Processed** <- Una vez terminado nuestro proceso de análisis guardaremos de forma local una copia de los resultados obtenidos eso con el fin de evitar repetir todo el proceso a la hora de construir nuestros reportes.<br><br>
+
+####Reports 
+En esta sección almacenaremos los .Rmd de nuestro reportes así como las imágenes y archivos css requeridos para la creación de los documentos.<br><br>
+
+**b) [30 puntos] Respetando la estructura de carpetas seleccionada realice un análisis exploratorio que cuente como mínimo con las siguientes etapas:**
+1) Lectura de datos (csv o xlsx).
+2) Transformación y limpieza de los datos.
+3) Análisis exploratorio de los datos.
+4) Reporte de los resultados utilizando Rmarkdown.
+
+Se realizá todos los puntos en la carpeta correspondiente del archivo.
+
+**c) [10 puntos] Publique su proyecto en Github y adjunte el enlace del repositorio público creado para el proyecto.**
+
+
+**d) [5 puntos] Empaquete su proyecto con la función bundle del paquete packrat y adjunte el archivo generado.**
+

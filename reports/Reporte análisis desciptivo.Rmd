@@ -1,0 +1,94 @@
+####Reporte de fallecidos por accidentes de tránsito en Costa Rica 
+####2018-Junio2019
+<br>
+**Los datos son de personas fallecidas en accidentes de tránsito reportadas a la Central de comunicaciones de la Dirección General de Policía de Tránsito, además, entiéndase muertes en sitio como las muertes ocurridas en el lugar  de  los  hechos  o  durante  el  traslado.Si  desea  consultas  más  particulares,  utilice  la  aplicación  de  tablas dinámicas de datos abiertos de Cosevi.**
+<br>
+
+```{r, echo=FALSE}
+load(file = "C:/Users/Deiby S/Desktop/Programacion avanzada R/Clase 3/Proyecto_Tarea_Deiby/R/preparation/accidentes.RData")
+#load(file = "R/preparation/accidentes.RData")
+
+suppressWarnings(suppressMessages(library(htmlTable)))
+
+
+tabla1=addmargins(table(accidentes$Tipo.de.accidente, accidentes$Año))
+colnames(tabla1)[3]<-"Total"
+tabla1.1=ftable(tabla1)
+attr(tabla1.1,"row.vars")[[1]][dim(tabla1)[1]]<-"Total"
+
+htmlTable(tabla1.1,rowlabel="Tipo de Accidente",header=attr(tabla1.1,"col.vars")[[1]],rnames=attr(tabla1.1,"row.vars")[[1]],caption=" Cuadro 1. Costa Rica: Número de fallecidos en sitio según Tipo de accidente por año en accidentes de tránsito en Costa Rica. Periodo 2018-2019",tfoot="Fuente: Cosevi. Área de Investigación y Estadística, elaboración propia con base en registros de la DGPT.",
+css.caption = "font-weight: 900")
+```
+<br><br>
+
+```{r, echo=FALSE}
+var="Provincia"
+tabla2=addmargins(table(accidentes[,4], accidentes$Año))
+colnames(tabla2)[3]<-"Total"
+tabla2.1=ftable(tabla1)
+attr(tabla2.1,"row.vars")[[1]][dim(tabla1)[1]]<-"Total"
+
+htmlTable(tabla1.1,rowlabel=var,header=attr(tabla1.1,"col.vars")[[1]],rnames=attr(tabla1.1,"row.vars")[[1]],caption=paste(" Cuadro 2. Costa Rica: Número de fallecidos en sitio según",var,"por año en accidentes de tránsito en Costa Rica. Periodo 2018-2019"),tfoot="Fuente: Cosevi. Área de Investigación y Estadística, elaboración propia con base en registros de la DGPT.",
+css.caption = "font-weight: 900")
+```
+<br><br>
+
+```{r, echo=FALSE}
+var="Cantón"
+tabla1=addmargins(table(accidentes[,5], accidentes$Año))
+colnames(tabla1)[3]<-"Total"
+tabla1.1=ftable(tabla1)
+attr(tabla1.1,"row.vars")[[1]][dim(tabla1)[1]]<-"Total"
+
+htmlTable(tabla1.1,rowlabel=var,header=attr(tabla1.1,"col.vars")[[1]],rnames=attr(tabla1.1,"row.vars")[[1]],caption=paste(" Cuadro 3. Costa Rica: Número de fallecidos en sitio según",var,"por año en accidentes de tránsito en Costa Rica. Periodo 2018-2019"),tfoot="Fuente: Cosevi. Área de Investigación y Estadística, elaboración propia con base en registros de la DGPT.",
+css.caption = "font-weight: 900")
+```
+
+<br><br>
+
+```{r, echo=FALSE}
+var="Rol"
+tabla1=addmargins(table(accidentes[,7], accidentes$Año))
+colnames(tabla1)[3]<-"Total"
+tabla1.1=ftable(tabla1)
+attr(tabla1.1,"row.vars")[[1]][dim(tabla1)[1]]<-"Total"
+
+htmlTable(tabla1.1,rowlabel=var,header=attr(tabla1.1,"col.vars")[[1]],rnames=attr(tabla1.1,"row.vars")[[1]],caption=paste(" Cuadro 4. Costa Rica: Número de fallecidos en sitio según",var,"por año en accidentes de tránsito en Costa Rica. Periodo 2018-2019"),tfoot="Fuente: Cosevi. Área de Investigación y Estadística, elaboración propia con base en registros de la DGPT.",
+css.caption = "font-weight: 900")
+```
+
+
+<br><br>
+
+```{r, echo=FALSE}
+var="Sexo"
+tabla1=addmargins(table(accidentes[,8], accidentes$Año))
+colnames(tabla1)[3]<-"Total"
+tabla1.1=ftable(tabla1)
+attr(tabla1.1,"row.vars")[[1]][dim(tabla1)[1]]<-"Total"
+
+htmlTable(tabla1.1,rowlabel=var,header=attr(tabla1.1,"col.vars")[[1]],rnames=attr(tabla1.1,"row.vars")[[1]],caption=paste(" Cuadro 5. Costa Rica: Número de fallecidos en sitio según",var,"por año en accidentes de tránsito en Costa Rica. Periodo 2018-2019"),tfoot="Fuente: Cosevi. Área de Investigación y Estadística, elaboración propia con base en registros de la DGPT.",
+css.caption = "font-weight: 900")
+```
+
+
+
+<br><br>
+
+```{r, echo=FALSE}
+var="Edad"
+tabla1=addmargins(table(accidentes[,9], accidentes$Año))
+colnames(tabla1)[3]<-"Total"
+tabla1.1=ftable(tabla1)
+attr(tabla1.1,"row.vars")[[1]][dim(tabla1)[1]]<-"Total"
+
+htmlTable(tabla1.1,rowlabel=var,header=attr(tabla1.1,"col.vars")[[1]],rnames=attr(tabla1.1,"row.vars")[[1]],caption=paste(" Cuadro 6. Costa Rica: Número de fallecidos en sitio según",var,"por año en accidentes de tránsito en Costa Rica. Periodo 2018-2019"),tfoot="Fuente: Cosevi. Área de Investigación y Estadística, elaboración propia con base en registros de la DGPT.",
+css.caption = "font-weight: 900")
+```
+
+
+
+
+
+
+
