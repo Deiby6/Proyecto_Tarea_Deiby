@@ -211,7 +211,7 @@ $(document).ready(function () {
 <p><strong>Lineamientos Generales</strong> Cada día de atraso en la entrega implica un rebajo de 10 puntos.La tarea es estrictamente de carácter individual, en caso de detectarse tareas idénticas ambas tendrán como nota cero. La tarea debe ser entregada en un documento html creado con el paquete Rmarkdown que contenga el código utilizado.El archivo debe tener el siguiente formato: Tarea1 nombre apellido.html, por ejemplo, si el nombre del estudiante es Luis Pérez el nombre del documento para la tarea 1 sería Tarea1 luis perez.html. Cada tarea representa un 20% de la nota total del curso.</p>
 <p><strong>Ejercicios</strong> <br> <strong>1. [50 puntos] Utilizando los paquetes devtools, usethis, packrat y el dataset Datos Churn.csv cree un proyecto de RStudio y realice los siguientes ejercicios:</strong> <br> <strong>a) [5 puntos] Cree la estructura de carpetas para su proyecto y documente cuál es el objetivo de cada una de las carpetas.</strong><br></p>
 <pre class="r"><code>library(usethis)
-create_project(&quot;Proyecto_Tarea_Deiby&quot;) # crear un nuevo proyecto llamado &quot;Proyecto_01&quot;.
+create_project(&quot;Proyecto_Tarea_Deiby&quot;) 
 
 library(usethis)
 use_directory(&quot;R&quot;)
@@ -222,7 +222,11 @@ use_directory(&quot;test&quot;)
 use_directory(&quot;data/raw&quot;)
 use_directory(&quot;data/processed&quot;)
 use_directory(&quot;reports/img&quot;)
-use_directory(&quot;reports/css&quot;)</code></pre>
+use_directory(&quot;reports/css&quot;)
+
+library(packrat)
+
+init()</code></pre>
 </div>
 <div id="r" class="section level4">
 <h4>R</h4>
@@ -240,7 +244,9 @@ use_directory(&quot;reports/css&quot;)</code></pre>
 <h4>Reports</h4>
 <p>En esta sección almacenaremos los .Rmd de nuestro reportes así como las imágenes y archivos css requeridos para la creación de los documentos.<br><br></p>
 <p><strong>b) [30 puntos] Respetando la estructura de carpetas seleccionada realice un análisis exploratorio que cuente como mínimo con las siguientes etapas:</strong> 1) Lectura de datos (csv o xlsx). 2) Transformación y limpieza de los datos. 3) Análisis exploratorio de los datos. 4) Reporte de los resultados utilizando Rmarkdown.</p>
+<p>Se realizá todos los puntos en la carpeta correspondiente del archivo.</p>
 <p><strong>c) [10 puntos] Publique su proyecto en Github y adjunte el enlace del repositorio público creado para el proyecto.</strong></p>
+<p><a href="https://github.com/Deiby6/Proyecto_Tarea_Deiby.git" class="uri">https://github.com/Deiby6/Proyecto_Tarea_Deiby.git</a></p>
 <p><strong>d) [5 puntos] Empaquete su proyecto con la función bundle del paquete packrat y adjunte el archivo generado.</strong></p>
 </div>
 </div>

@@ -68,6 +68,7 @@ Se realizá todos los puntos en la carpeta correspondiente del archivo.
 
 **c) [10 puntos] Publique su proyecto en Github y adjunte el enlace del repositorio público creado para el proyecto.**
 
+https://github.com/Deiby6/Proyecto_Tarea_Deiby.git
 
 **d) [5 puntos] Empaquete su proyecto con la función bundle del paquete packrat y adjunte el archivo generado.**
 
