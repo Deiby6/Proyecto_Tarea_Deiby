@@ -64,7 +64,7 @@ En esta sección almacenaremos los .Rmd de nuestro reportes así como las imáge
 3) Análisis exploratorio de los datos.
 4) Reporte de los resultados utilizando Rmarkdown.
 
-Se realizá todos los puntos en la carpeta correspondiente del archivo.
+Se realizá todos los puntos en la carpeta correspondiente del archivo.  
 
 **c) [10 puntos] Publique su proyecto en Github y adjunte el enlace del repositorio público creado para el proyecto.**
 
