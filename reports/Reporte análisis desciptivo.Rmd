@@ -5,8 +5,8 @@
 <br>
 
 ```{r, echo=FALSE}
-load(file = "C:/Users/Deiby S/Desktop/Programacion avanzada R/Clase 3/Proyecto_Tarea_Deiby/R/preparation/accidentes.RData")
-#load(file = "R/preparation/accidentes.RData") Este no funciona. 
+#load(file = "C:/Users/Deiby S/Desktop/Programacion avanzada R/Clase 3/Proyecto_Tarea_Deiby/R/preparation/accidentes.RData")
+load("./R/preparation/accidentes.RData") 
 
 suppressWarnings(suppressMessages(library(htmlTable)))
 
